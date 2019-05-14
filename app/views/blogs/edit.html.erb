@@ -1,6 +1,13 @@
-<h1>Editing Blog</h1>
+<% provide(:button_text, '変 更')%>
 
-<%= render 'form', blog: @blog %>
+<div class="blog_form">
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+  <div class="blog_back blog_btn">
+    <%= link_to '戻る', blogs_path %>
+  </div>
+  
+  <h1>内容編集</h1>
+
+  <%= render 'form', blog: @blog %>
+
+</div>

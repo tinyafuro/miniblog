@@ -1,0 +1,229 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//自サイト用の専用配色
+$my-color1: #ffd480;
+$my-color2: #ffaa1c;
+$my-color3: #ef7023;
+
+/*================================================
+ *  一般・共通設定
+ ================================================*/
+
+body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  padding: 100px 0px 0px 0px;
+  color: white;
+  overflow-x: hidden;   //横スクロール禁止
+  background-color: $my-color1;
+}
+
+#contents {
+  width:100%;
+  margin:0 auto;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;                 // 字色
+  text-align: center;             // 中央寄せ
+  line-height: 1.5;               // 行間
+  margin-bottom: 30px;            // マージン
+}
+
+h1 {
+  font-size: calc(250% + 0.5vw);  // 文字サイズ（レスポンシブ）
+  font-weight: bold;               // 字の太さ
+  letter-spacing: 1.5px;          // 字間隔
+}
+
+h2 {
+  font-size: calc(150% + 0.5vw);   // 文字サイズ（レスポンシブ）
+  font-weight: bold;               // 字の太さ
+  letter-spacing: 1px;             // 字間隔
+}
+
+p {
+  color: black;                  // 字色
+  font-size: calc(85% + 0.5vw);    // 文字サイズ（レスポンシブ）
+  line-height: 2.0;                // 行間
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+
+
+/*================================================
+ *  汎用クラス
+ ================================================*/
+
+ /* 写真中央寄せ */
+ .imgC {
+  clear:both;
+  overflow:hidden;
+  margin-bottom:50px;
+  text-align:center;
+  img {
+    border-radius:5px;
+    margin-bottom:0.5em;
+  }
+}
+
+/* 写真左寄せ */
+.imgL {
+  clear:both;
+  overflow:hidden;
+  margin-bottom:50px;
+  img {
+    float:left;
+    margin:0 2em 2em 0;
+    border-radius:5px;
+  }
+}
+
+/* 写真右寄せ */
+.imgR {
+  clear:both;
+  overflow:hidden;
+  margin-bottom:50px;
+  img {
+    float:right;
+    margin:0 0 2em 2em;
+    border-radius:5px;
+  }
+}
+
+/* 通常の領域 */
+.normal-area {
+  width:100%;
+  padding: 10px;
+}
+
+/* 背景画像を表示させない領域 */
+.non-background-area {
+  width:100%;
+  padding: 10px;
+  background: $my-color2
+}
+
+/* 通常のブロック */
+.normal-block {
+  margin: 50px;
+  padding: 20px;
+}
+
+/* 背景が白いブロック */
+.white-block {
+  margin: 50px;
+  padding: 50px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+
+
+/*================================================
+ *  ヘッダー
+ ================================================*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $my-color2;
+}
+
+/* ロゴ */
+#logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  font-size: 2em;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: .4s ease-in-out;
+  &:hover {
+    color: $my-color3;
+  }
+}
+
+/* ヘッダーナビゲーション */
+#nav-header {
+  nav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+
+    ul {
+      list-style: none;
+      padding: .2em 2em;
+      float: right;
+      li {
+        display: inline-block;
+        margin: 0;
+        padding: .2em .7em;
+      }
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      font-size: 1.5em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: .4s ease-in-out;
+
+      &:hover {
+        color: $my-color3;
+      }
+    }
+  }
+}
+
+
+/*================================================
+ *  フッター
+ ================================================*/
+
+footer {
+  position: fixed;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  padding: 10px;
+  background-color: $my-color2;
+  text-align:center;
+  p {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: .2em 2em;
+    li {
+      display: inline-block;
+      padding: .2em .7em;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}

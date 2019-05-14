@@ -1,29 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
+<div class="blog_header">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>BLOG一覧</h1>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="blog_header_content">
+    <!-- ブログヘッダー -->
+    <h3>投稿数 <%= @blogs.count %></h3>
+    <!-- 新規作成ボタン -->
+    <div class="blog_create blog_btn">
+      <%= link_to '新規作成', new_blog_path %>
+    </div>
+  </div>
 
-<br>
+</div>
 
-<%= link_to 'New Blog', new_blog_path %>
+<!-- ブログ記事一覧 -->
+<div class="blogs">
+
+  <% @blogs.each do |blog| %>
+
+    <li>
+      <div class="col-md-10">
+        <!-- タイトル・ボディ -->
+        <span class="blog_title"><%= blog.title %></span>
+        <span class="blog_body"><%= blog.body %></span>
+        <span class="blog_date"><%= blog.created_at %></span>
+      </div>
+      <div class="col-md-2">
+        <!-- 詳細ボタン -->
+        <div class="blog_show blog_btn">
+          <%= link_to "詳 細", blog_path(blog) %>
+        </div>
+      </div>
+    </li>
+
+  <% end %>
+
+</div>

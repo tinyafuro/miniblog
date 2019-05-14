@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<div class="blog_detail_header">
+  <!-- 変更ボタン -->
+  <div class="blog_back blog_btn">
+    <%= link_to '戻 る', blogs_path %>
+  </div>
+  <!-- 変更ボタン -->
+  <div class="blog_update blog_btn">
+    <%= link_to '変 更', edit_blog_path(@blog) %>
+  </div>
+  <!-- 削除ボタン -->
+  <div class="blog_delete blog_btn">
+    <%= link_to "削 除", @blog, method: :delete, data: { confirm: "You sure?" } %>
+  </div>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
+<!-- 詳細画面 -->
+<div class="blog_detail">
+  <li class="blog_detail_list">
+    <!-- タイトル・ボディ -->
+    <span class="blog_title"><%= @blog.title %></span>
+    <span class="blog_body"><%= @blog.body %></span>
+  </li>
+<div>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>

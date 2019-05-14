@@ -1,17 +1,9 @@
 Blog.create!(title:  "初投稿！", 
   body: "はじめてのブログ投稿記事です。",)
 
-#その他アカウントを99個作成
-10.times do |n|
-#ユーザー名も日本語化
-Faker::Config.locale = 'ja'
-title  = Faker::Name.name
-body = "example-#{n+1}@railstutorial.org"
-subject = "English"
-password = "password"
-User.create!(name:  name,
-    email: email,
-    subject: subject,
-    password:              password,
-    password_confirmation: password)
+9.times do |n|
+  title  = "投稿#{n+2} タイトル"
+  body = "投稿#{n+2}番目の内容です。"
+  Blog.create!(title:  title,
+      body: body)
 end
